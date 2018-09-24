@@ -2,7 +2,7 @@ language: python
 python:
   - "3.6"
 env:
-  - PORT=8080
+  - PORT=9000
 cache: pip
 install: "pip install -r requirements.txt"
 script: python hello.py
