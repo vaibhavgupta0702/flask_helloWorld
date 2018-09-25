@@ -4,5 +4,9 @@ python:
 env:
   - PORT=9000
 cache: pip
-install: "pip install -r requirements.txt"
-script: python hello.py &
+install: 
+  - pip install -r requirements.txt
+  - pip install -r tests/requirements_test.txt
+script: 
+  - python hello.py &
+  - python tests/test.py
