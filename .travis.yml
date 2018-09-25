@@ -1,5 +1,4 @@
 stages:
-  - run
   - test
   - deploy
 language: python
@@ -11,9 +10,10 @@ cache: pip
 
 jobs:
   include:
-    - stage: run
-      install: pip install -r requirements.txt
-      script: python hello.py &
     - stage: test
-      install: pip install -r tests/requirements_test.txt
-      script: python tests/test.py
+      install: 
+        - pip install -r requirements.txt
+        - pip install -r tests/requirements_test.txt
+      script: 
+        - python hello.py &
+        - python tests/test.py
