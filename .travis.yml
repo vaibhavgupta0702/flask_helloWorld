@@ -7,14 +7,14 @@ python:
 env:
 - PORT=8080
 cache: pip
+install: pip install -r requirements.txt
+script:  python hello.py &
 jobs:
   include:
   - stage: test
     install:
-    - pip install -r requirements.txt
     - pip install -r tests/requirements_test.txt
     script:
-    - python hello.py &
     - python tests/test.py
   - stage: deploy
     provider: cloudfoundry
