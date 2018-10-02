@@ -7,7 +7,7 @@ python:
 env:
 - PORT=8080
 cache: pip
-script: python hello.py &
+script: echo "TODO"
 jobs:
   include:
   - stage: test
