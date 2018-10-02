@@ -1,28 +1,22 @@
-stages:
-- test
-- deploy
 language: python
 python:
 - '3.6'
 env:
 - PORT=8080
 cache: pip
-jobs:
-  include:
-  - stage: test
-    install:
-    - pip install -r requirements.txt
-    - pip install -r tests/requirements_test.txt
-    script:
-    - python hello.py &
-    - python tests/test.py
-  - stage: deploy
-    provider: cloudfoundry
-    username: vaibhavgupta0702@gmail.com
-    password:
-      secure: fSgB0SKyVmFRUDog+edKE+YjiWILcYSHPZQJfTO6F5iXRNmPUii2il1/eA3bIep3FaYdC+J8T3WiC1SooPdvTvODxx+6kSxr+dMF1UVPua1PVvZ7jto3MCcY9oQ3Tm0X89WFNjNpKXG+PCeEduntLZKH9ef3Ih4OtAVkYKiTgvMqPrxJLOBwf0i8K74mdFvlstsHDrpXauEbBPYaRcb3DxVl+fk/w6kMP1Um79xprINlf3dyYsdTk4i93yKWtOzDRoJZMiT9GdFpiUVhregEIcaCAh5U0B8agfxg7OgH165njolazoab04UTAXoxQVc0vrhI5HMBwVnJXYnoRWlJslpE+6kDKA6owB7qkg2hZvk1oX0bYpVjV/kDKrlUY07B8jqurLZMKczW8UjJ2nONMGWb5KHp/wDAj2M5Pcd9Tjppzkedpo13HdO3D7d6EtgGsTmZGJPaxQQr6AMAMiYy/GMVGABjetOCPlV+6SHV0rFa9d+RxG/34AkkL6n6H/CB6Iq8RvKwa+BufTirA3MzVeA3fm9x87SAVHF+lO4xU9kUfxRr5oaGDyobtWknzG1JTcK+FYjjWMyQ8yU4/HgbsXJ8oD4u971lPkHe6DwW8LEm+kxYjvC5VU5KvlHbBLq63b5ACJy9WdXtpKdRxljKaJCZoBlr/34e7I/h0m/aC40=
-    api: https://api.run.pivotal.io
-    organization: Hello_Flask
-    space: develpoment
-    install: pip install -r requirements.txt
-    script: python hello.py &
+install:
+- pip install -r requirements.txt
+- pip install -r tests/requirements_test.txt
+script:
+- python hello.py &
+- python tests/test.py
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: vaibhavgupta0702@gmail.com
+  password:
+    secure: A3yfYRtXwYdyBURH+j4jIbewyt4n3xgICxmEPZFmBfES/myVR6raeMXuoeklpxHHVTm03OP6TRSzK4KOYSbLEXt4K9G2QtKPQ0Jc/QIeEJtA3kvEVCwWVOrvRBGyvzba1B4Wl5ayDah8pdTrTHa4UCQKVGN8o6E+8Pb3+gRz1kV2zx5kcALMBIJm1iJH312kg3ESd8pYyUbKpk1x8D9JAsdqZE/UjOGPxEjYJpmLxkFqJMqvUILOhwnxPrQ2dkabEiYfaOAidIYkITXhDI62mVAlqWXwnOphagmH/vzPEw0ngd5GLTmpQQa3n14xfncx5oGiRDisWmHqO+mp7Af+h2EB+K3IleR/EOxTzbJRJHzitI+a3RBQPOPjq1AxYsvp+7xCpMbKpKBtNytOJAxt5rWdg1Vsl0Ifx82bSVbZfRWBRLdCYWdHprTkPSZuT3QFEJJS+SpuCzqEgkUuh5G+LxeMDUIeTKZiBuLrWjmhFQiwIXzv3V96lKPjsPLBrYaEP/EIG9m/ZuZAWk3BmGRehXNSntgSziTHuszT8kC9TDyzBALjlYDNSbJ3EEI2IXrBJhw3+wZ9PpdP/cKlqhY7mae5q/5clIuwoVuR12lF5DsRkRp7izUEMIoqiqwW+O7bs4hYmKOV786bOkhq6tw9+c616Z7M+kfcKrYnyxhQL6s=
+  organization: Hello_Flask
+  space: development
+  on:
+    repo: vaibhavgupta0702/flask_helloWorld
