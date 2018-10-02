@@ -25,3 +25,5 @@ jobs:
       api: https://api.run.pivotal.io
       organization: Hello_Flask
       space: development
+      on:
+        repo: vaibhavgupta0702/flask_helloWorld
