@@ -6,5 +6,6 @@ applications:
     -  https://github.com/vaibhavgupta0702/flask_helloWorld.git
   command: python hello.py &
   timeout: 60
+  random-route: true
   env:
     PORT: 8080
