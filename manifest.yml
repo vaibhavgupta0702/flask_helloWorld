@@ -3,5 +3,7 @@ applications:
 - name: flask_helloWorld
   memory: 128M
   path: ./bin
+  buildpacks:
+    - https://github.com/cloudfoundry/buildpack-python.git
   command: python hello.py &
   random-route: true
