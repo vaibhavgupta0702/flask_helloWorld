@@ -7,5 +7,3 @@ applications:
   command: python hello.py &
   timeout: 60
   random-route: true
-  env:
-    PORT: 8080
