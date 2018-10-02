@@ -17,3 +17,10 @@ jobs:
       script: 
         - python hello.py &
         - python tests/test.py
+    - stage: deploy
+      provider: cloudfoundry
+      username: vaibhavgupta0702@gmail.com
+      password: 01011956@Dad
+      api: https://api.run.pivotal.io
+      organization: myorganisation
+      space: staging
