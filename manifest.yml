@@ -1,8 +1,8 @@
 ---
 applications:
-- name: hello.py
+- name: hello
   memory: 128M
-  buildpack: https://github.com/vaibhavgupta0702/flask_helloWorld.git
+  buildpacks: https://github.com/vaibhavgupta0702/flask_helloWorld.git
   command: python hello.py &
   timeout: 60
   env:
