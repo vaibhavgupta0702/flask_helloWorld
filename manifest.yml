@@ -1,6 +1,6 @@
 ---
 applications:
-- name: hello
+- name: flask_helloWorld
   memory: 128M
   buildpacks:
     -  https://github.com/vaibhavgupta0702/flask_helloWorld.git
