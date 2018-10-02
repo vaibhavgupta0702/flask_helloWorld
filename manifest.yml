@@ -2,6 +2,6 @@
 applications:
 - name: flask_helloWorld
   memory: 128M
+  path: ./bin
   command: python hello.py &
-  timeout: 60
   random-route: true
