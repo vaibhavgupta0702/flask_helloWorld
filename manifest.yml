@@ -1,1 +1,9 @@
-cf push
+---
+applications:
+- name: hello.py
+  memory: 128M
+  buildpack: https://github.com/vaibhavgupta0702/flask_helloWorld.git
+  command: python hello.py &
+  timeout: 60
+  env:
+    PORT: 8080
