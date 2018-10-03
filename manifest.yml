@@ -4,5 +4,4 @@ applications:
   memory: 128M
   buildpacks:
     - https://github.com/cloudfoundry/buildpack-python.git
-  command: python hello.py &
   random-route: true
