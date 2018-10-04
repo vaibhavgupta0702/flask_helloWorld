@@ -8,7 +8,6 @@ python:
 env:
 - PORT=8080
 cache: pip
-script: echo "TODO"
 jobs:
   include:
   - stage: test
@@ -19,6 +18,7 @@ jobs:
     - python hello.py &
     - python tests/test.py
   - stage: deploy
+    script: echo "TODO"
     deploy:
       provider: cloudfoundry
       username: vaibhavgupta0702@gmail.com
