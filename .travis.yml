@@ -4,6 +4,7 @@ stages:
 language: python
 python:
 - '3.6'
+- '3.2'
 env:
 - PORT=8080
 cache: pip
